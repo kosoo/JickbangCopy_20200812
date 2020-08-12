@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:textColor="#FFA509"
+                android:textColor="#FF7B00"
                 android:text="8,000" />
 
             <TextView
