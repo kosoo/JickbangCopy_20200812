@@ -2,11 +2,15 @@ package kr.co.tjoeun.jickbangcopy_20200812
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import kr.co.tjoeun.jickbangcopy_20200812.adapters.roomAdapter
 import kr.co.tjoeun.jickbangcopy_20200812.datas.Room
 
 class MainActivity : BaseActivity() {
 
     val mRoomList = ArrayList<Room>()
+
+    lateinit var mRoomAdapter : roomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,5 +39,10 @@ class MainActivity : BaseActivity() {
         mRoomList.add(Room(38000, "서울시 동대문구", 11, "동대문구의 11층 방입니다."))
         mRoomList.add(Room(57000, "서울시 동대문구", 12, "동대문구의 12층 방입니다."))
         mRoomList.add(Room(85000, "서울시 동대문구", 15, "동대문구의 15층 방입니다."))
+
+//        초기화를 미뤄둔 어댑터를 실제로 초기화하자
+        mRoomAdapter = roomAdapter(mContext, R.layout.room_list_item, mRoomList)
+
+        roomListView.adapter = mRoomAdapter
     }
 }
