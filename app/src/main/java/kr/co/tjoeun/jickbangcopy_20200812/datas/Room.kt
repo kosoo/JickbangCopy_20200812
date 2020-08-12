@@ -6,4 +6,5 @@ class Room(
     val floor : Int,
     val description : String
 ) {
+
 }
