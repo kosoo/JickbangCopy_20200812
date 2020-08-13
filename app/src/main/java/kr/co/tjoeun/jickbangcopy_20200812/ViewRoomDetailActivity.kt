@@ -1,12 +1,14 @@
 package kr.co.tjoeun.jickbangcopy_20200812
 
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_view_room_detail.*
+import kr.co.tjoeun.jickbangcopy_20200812.datas.Room
 
 class ViewRoomDetailActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_view_room_detail)
         setupEvents()
         setValues()
     }
@@ -16,7 +18,10 @@ class ViewRoomDetailActivity : BaseActivity() {
 
     override fun setValues() {
 
-        val room = intent.getSerializableExtra("roomInfo")
+        val room = intent.getSerializableExtra("roomInfo") as Room
+
+        addressTxt.text = room.address
+
 
     }
 }

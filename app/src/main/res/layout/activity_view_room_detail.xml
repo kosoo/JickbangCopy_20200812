@@ -15,9 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
+            android:id="@+id/priceTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8,500 (가격자리)"
@@ -26,6 +28,7 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/descTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="설명 문구 나올 자리"
@@ -54,6 +57,7 @@
             android:layout_weight="1"/>
 
         <TextView
+            android:id="@+id/addressTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="서울시 은평구"
@@ -84,6 +88,7 @@
             android:layout_weight="1"/>
 
         <TextView
+            android:id="@+id/floorTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="지하 1층 (예시)"
