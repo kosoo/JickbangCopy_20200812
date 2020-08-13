@@ -15,5 +15,8 @@ class ViewRoomDetailActivity : BaseActivity() {
     }
 
     override fun setValues() {
+
+        val room = intent.getSerializableExtra("roomInfo")
+
     }
 }
