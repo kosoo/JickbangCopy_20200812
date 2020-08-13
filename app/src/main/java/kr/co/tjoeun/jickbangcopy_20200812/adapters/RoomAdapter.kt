@@ -34,17 +34,7 @@ class RoomAdapter(
         val data = mList[position]
 
         priceTxt.text = data.getFormattedPrice()
-
-        val floorStr : String
-        if (data.floor >= 1) {
-            floorStr = "${data.floor}층"
-        } else if (data.floor == 0) {
-            floorStr = "반지하"
-        } else {
-            floorStr = "지하 ${-data.floor}층"
-        }
-
-        addressAdnFloorTxt.text = "${data.address}, ${floorStr}"
+        addressAdnFloorTxt.text = "${data.address}, ${data.getFormattedFloor()}"
         descTxt.text = data.description
 
 

@@ -26,4 +26,18 @@ class Room(
 
     }
 
+    fun getFormattedFloor() : String {
+
+        val floorStr : String
+        if (this.floor >= 1) {
+            floorStr = "${this.floor}층"
+        } else if (this.floor == 0) {
+            floorStr = "반지하"
+        } else {
+            floorStr = "지하 ${-this.floor}층"
+        }
+
+        return floorStr
+    }
+
 }
