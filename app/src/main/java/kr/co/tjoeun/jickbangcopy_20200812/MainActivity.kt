@@ -29,15 +29,16 @@ class MainActivity : BaseActivity() {
 
 //        메인 화면의 이벤트 관련 코드 모아둘 장소
 
+//        리스트뷰의 각 줄이 눌리는 시점의 이벤트 => 세번째 변수의 이름 확인 (position or i)
         roomListView.setOnItemClickListener { adapterView, view, i, l ->
 
+//            눌린 위치에 해당하는 방이 어떤방인지 가져오기
             val clickedRoom = mRoomList[i]
 
+//            상세보기 화면으로 이동 => 해당 방을 통째로 넘겨서 이동 (Serializable 활용)
             val myIntent = Intent(mContext, ViewRoomDetailActivity::class.java)
-
             myIntent.putExtra("roomInfo", clickedRoom)
             startActivity(myIntent)
-
         }
     }
 
@@ -57,9 +58,13 @@ class MainActivity : BaseActivity() {
         mRoomList.add(Room(57000, "서울시 동대문구", 12, "동대문구의 12층 방입니다."))
         mRoomList.add(Room(85000, "서울시 동대문구", 15, "동대문구의 15층 방입니다."))
 
-//        초기화를 미뤄둔 어댑터를 실제로 초기화하자
+//        lateinit var로 초기화를 미뤄둔 변수의 실제로 초기화 코드
+//        (어떤화면에서?, 어떤모양으로줄들을그릴건지?, 어떤목록을뿌려줄지?)
+//        RoomAdapter의 생서자를 만들때 요구했던 자료들을 넣어준다
         mRoomAdapter = RoomAdapter(mContext, R.layout.room_list_item, mRoomList)
 
+//        방목록 리스트뷰의 어댑터로 => mRoomAdapter를 지정해주자
+//        실제로 리스트뷰에 목록을 뿌려주게된다.
         roomListView.adapter = mRoomAdapter
     }
 }
