@@ -11,7 +11,7 @@ import kr.co.tjoeun.jickbangcopy_20200812.datas.Room
 import java.text.NumberFormat
 import java.util.*
 
-class roomAdapter(
+class RoomAdapter(
     val mContext : Context ,
     val resId : Int,
     val mList : List<Room>
