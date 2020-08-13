@@ -33,15 +33,8 @@ class RoomAdapter(
 
         val data = mList[position]
 
-        if (data.price >= 10000){
-            val hm = data.price / 10000
-            val th = data.price % 10000
+        priceTxt.text = data.getFormattedPrice()
 
-            priceTxt.text = "${hm}억 ${NumberFormat.getNumberInstance(Locale.KOREA).format(th)}"
-        }else{
-            priceTxt.text = NumberFormat.getNumberInstance(Locale.KOREA).format(data.price)
-        }
-        /**/
         val floorStr : String
         if (data.floor >= 1) {
             floorStr = "${data.floor}층"
